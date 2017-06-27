@@ -5,27 +5,27 @@
         <span>Switch view</span>
     </a>
 
-    <button aria-label="Select multiple" class="action mobile-only" id="multiple-selection-activate">
+    <button aria-label="Select multiple" class="action mobile-only" id="multiple-selection-activate" data-balloon="Select Multiple" data-balloon-pos="up">
         <i class="material-icons">check_circle</i>
         <span>Select</span>
     </button>
     {{- end }}
 
     {{- if and (.User.AllowNew) (.IsDir) }}
-    <button aria-label="Upload" title="Upload" class="action" id="upload">
+    <button aria-label="Upload" title="Upload" class="action" id="upload" data-balloon="Upload" data-balloon-pos="up">
         <i class="material-icons">file_upload</i>
         <span>Upload</span>
     </button>
     {{- end }}
 
     {{- if and .User.AllowEdit (not .IsDir) }}
-    <button aria-label="Delete"  title="Delete" class="action" id="delete">
+    <button aria-label="Delete"  title="Delete" class="action" id="delete" data-balloon="Delete" data-balloon-pos="up">
         <i class="material-icons">delete</i>
         <span>Delete</span>
     </button>
     {{- end }}
 
-    <button {{ if .IsDir }}data-dropdown{{ end }} aria-label="Download" title="Download" class="action" id="download">
+    <button {{ if .IsDir }}data-dropdown{{ end }} aria-label="Download" title="Download" class="action" id="download" data-balloon="Download" data-balloon-pos="up">
         {{- if not .IsDir}}<a href="?download=true">{{ end }}
         <i class="material-icons">file_download</i><span>Download</span>
         {{- if not .IsDir}}</a>{{ end }}
@@ -41,7 +41,7 @@
         {{- end }}
     </button>
 
-    <button title="Info" aria-label="Info" class="action" id="info">
+    <button title="Info" aria-label="Info" class="action" id="info" data-balloon="Info" data-balloon-pos="up">
         <i class="material-icons">info</i>
         <span>Info</span>
     </button>
@@ -52,13 +52,13 @@
     {{- if .Editor}}
 
     {{- if eq .Data.Mode "markdown" }}
-    <button aria-label="Preview" class="action" id="preview" onclick="notImplemented(event);">
+    <button aria-label="Preview" class="action" id="preview" onclick="notImplemented(event);" data-balloon="Preview" data-balloon-pos="up">
         <i class="material-icons" title="Preview">remove_red_eye</i>
     </button>
     {{- end }}
 
     {{- if eq .Data.Visual true }}
-    <button aria-label="Toggle edit source" class="action" id="edit-source">
+    <button aria-label="Toggle edit source" class="action" id="edit-source" data-balloon="Toggle Edit Source" data-balloon-pos="up">
         <i class="material-icons" title="Toggle edit source">code</i>
     </button>
     {{- end }}
@@ -66,7 +66,7 @@
     {{/* end if editor */}}
     {{- end }}
 
-    <button aria-label="Save" class="action" id="save">
+    <button aria-label="Save" class="action" id="save" data-balloon="Save" data-balloon-pos="up">
         <i class="material-icons" title="Save">save</i>
     </button>
 
@@ -74,17 +74,17 @@
     {{- end }}
 
     {{- if and .IsDir .User.AllowEdit }}
-    <button aria-label="Edit" class="action" id="rename">
+    <button aria-label="Edit" class="action" id="rename" data-balloon="Edit" data-balloon-pos="up">
         <i class="material-icons" title="Edit">mode_edit</i>
         <span>Rename</span>
     </button>
 
-    <button aria-label="Move" class="action" id="move">
+    <button aria-label="Move" class="action" id="move" data-balloon="Move" data-balloon-pos="up">
         <i class="material-icons" title="Move">forward</i>
         <span>Move file</span>
     </button>
 
-    <button aria-label="Delete" class="action" id="delete">
+    <button aria-label="Delete" class="action" id="delete" data-balloon="Delete" data-balloon-pos="up">
     <i class="material-icons" title="Delete">delete</i><span>Delete</span>
     </button>
     {{- end }}

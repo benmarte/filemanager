@@ -1,6 +1,6 @@
 {{ define "right-side-actions" }}
     {{- if .IsDir }}
-    <a aria-label="Switch View" href="?display={{- if eq .Display "mosaic" }}list{{ else }}mosaic{{ end }}" class="action">
+    <a aria-label="Switch View" href="?display={{- if eq .Display "mosaic" }}list{{ else }}mosaic{{ end }}" class="action" data-balloon="Switch View" data-balloon-pos="up">
         <i class="material-icons">{{- if eq .Display "mosaic" }}view_list{{ else }}view_module{{ end }}</i>
         <span>Switch view</span>
     </a>
